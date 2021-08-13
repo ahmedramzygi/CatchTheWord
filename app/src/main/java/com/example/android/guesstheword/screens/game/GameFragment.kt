@@ -62,6 +62,9 @@ class GameFragment : Fragment() {
         binding.skipButton.setOnClickListener { viewModel.onSkip()
 
         }
+        binding.buttonStartPause.setOnClickListener{
+            viewModel.timerHandler()
+        }
 //Live Data Functions for updating the word and score variables
         viewModel.score.observe(this, Observer { newScore ->
             binding.scoreText.text = newScore.toString()
@@ -81,6 +84,19 @@ class GameFragment : Fragment() {
             binding.timerText.text = DateUtils.formatElapsedTime(newTime)
 
         })
+        viewModel.mTimerRunning.observe(this, Observer { TimerChanged ->
+            if(TimerChanged)
+            {
+                binding.buttonStartPause.text="Pause"
+            }
+            else{
+                binding.buttonStartPause.text="Start"
+            }
+
+        })
+
+
+
         return binding.root
 
     }

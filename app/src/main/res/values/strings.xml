@@ -26,4 +26,7 @@
     <string name="word_is">The word is…</string>
     <string name="quote_format">\"%s\"</string>
     <string name="score_format">Current Score: %d</string>
+    <string name="pause_button">Pause</string>
+    <string name="reset_button">Reset</string>
+    <string name="start_button">Start</string>
 </resources>
